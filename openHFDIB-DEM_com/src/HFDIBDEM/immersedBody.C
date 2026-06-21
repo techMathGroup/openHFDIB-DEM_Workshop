@@ -487,8 +487,10 @@ void immersedBody::postPimpleUpdateImmersedBody
 )
 {
     // update Vel_, Axis_ and omega_
-    updateCoupling(body,fPress,fVisc);
-    
+    if(!solverInfo::getOnlyDEM()) // if only DEM is not active update the movement of the body
+    {
+        updateCoupling(body,fPress,fVisc);
+    }
     // move FCouplingOld_ here -> update
 
     Vel_ = VelOld_;

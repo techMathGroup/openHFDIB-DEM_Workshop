@@ -1,0 +1,177 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \    /   O peration     | Version:  3.0.x                                 |
+|   \  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      HFDIBDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+bodyNames ( "glitter" );
+
+interpolationSchemes
+{
+  U cell;
+}
+
+surfaceThreshold    1e-4;
+stepDEM     1;
+geometricD (1 1 1);
+recordSimulation true;
+recordFirstTimeStep false;
+nSolidsInDomain 5;       //Sets Upper Limit On Number Of Particles In Domain if not spcecified sets to 1000 by default
+
+
+
+outputSetup
+{
+    basic false;
+    iB  false;
+    DEM false;
+    addModel true;
+    parallelDEM false;
+}
+
+glitter
+{
+    staticBody;
+
+    rho         rho [1 -3 0 0 0 0 0] 1;
+    material particle;
+    
+    bodyGeom convex;
+
+    updateTorque false;
+    sdBasedLambda false;
+    interfaceSpan 1.0;
+    startSynced false;
+    refineBuffers -1;
+    timesToSetStatic -1; //number of timeSteps in contact with wall/static body to set body as static. Never when -1
+    bodyAddition
+	{
+		// addModel onceScatter;
+		// onceScatterCoeffs
+		addModel repeatRandomPosition;
+		repeatRandomPositionCoeffs
+		{
+
+// ---------------------------------------------------------------------------------//            
+//--------- // addMode options are: fieldBased, multiBody
+// ---------------------------------------------------------------------------------//
+			addMode fieldBased;
+			fieldBasedCoeffs
+			{
+				fieldName lambda;
+				fieldValue 0.1;
+			}
+// ---------------------------------------------------------------------------------//
+			// addMode timeBased;
+			// timeBasedCoeffs
+			// {
+			// 	useNTimes 1;
+			// 	timeBetweenUsage 0.5;
+            //     partPerAdd 5;
+			// }
+// ---------------------------------------------------------------------------------//
+			// addMode multiBody;
+			// multiBodyCoeffs
+			// {
+			// 	partPerAdd 2;
+			// }
+
+// ---------------------------------------------------------------------------------//            
+//--------- // addDomain options are: boundBox, cellZone
+// ---------------------------------------------------------------------------------//
+			addDomain boundBox;
+			boundBoxCoeffs
+			{
+				minBound (-0.05 -0.05 -0.05);
+				maxBound (0.05 0.05 0.05);
+			}
+// ---------------------------------------------------------------------------------//
+            // addDomain cellZone;
+			// cellZoneCoeffs
+			// {
+			// 	zoneName addZone;
+			// }   
+// ---------------------------------------------------------------------------------//
+//--------- // scalingMode options are: noScaling, randomScaling, scaleToFit
+// ---------------------------------------------------------------------------------//
+			// scalingMode    noScaling;
+			// noScalingCoeffs{}
+// ---------------------------------------------------------------------------------//			
+			scalingMode    randomScaling;
+			randomScalingCoeffs
+            {
+                minScale 0.5;
+                maxScale 0.5;
+            }
+// ---------------------------------------------------------------------------------//
+			// scalingMode    scaleToFit;
+			// scaleToFitCoeffs
+            // {
+            //     minScale 0.5;
+            //     scaleStep 0.1;
+            //     nTriesBeforeScaling 5;
+            // }
+// ---------------------------------------------------------------------------------//
+//--------- // initial rotation of the solid options: noRotation, randomRotation, fixedAxisRandomRotation			
+// ---------------------------------------------------------------------------------//
+			// rotationMode   noRotation;
+			// noRotationCoeffs{}	
+// ---------------------------------------------------------------------------------//
+			rotationMode   randomRotation;
+			randomRotationCoeffs{}
+// ---------------------------------------------------------------------------------//            
+			// rotationMode   fixedAxisRandomRotation;
+			// fixedAxisRandomRotationCoeffs
+            // {
+            //     axis (0 0 1);
+            // }
+// ---------------------------------------------------------------------------------//            
+		}
+	}	
+
+}
+
+DEM
+{
+    // LcCoeff 4.0;
+    // LcCoeff 0.55;
+    // rotationModel chen2012;
+	// rotationModel mindlin1953
+    materials
+    {
+        particle
+        {
+            Y       1;
+            nu      0;
+            mu      0;
+            adhN    0;
+            eps     1;
+        }
+
+        wall
+        {
+            Y       1;
+            nu      0;
+            mu      0;
+            adhN    0;
+            eps     1;
+        }
+    }
+
+    collisionPatches
+    {
+
+    }
+}
+
+// ************************************************************************* //

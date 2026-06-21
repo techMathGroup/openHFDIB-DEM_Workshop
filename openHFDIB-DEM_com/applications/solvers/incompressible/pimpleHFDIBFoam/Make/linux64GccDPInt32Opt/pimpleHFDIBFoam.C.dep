@@ -902,8 +902,8 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvOptionI.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvOptionListTemplates.C \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/pimpleControl.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/pimpleControlI.H \
-$(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/CorrectPhi.H \
-$(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/CorrectPhi.C \
+CorrectPhi.H \
+$(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/continuityErrs.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/localEulerDdtScheme.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/localEulerDdtScheme.C \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvcSmooth.H \
@@ -1069,7 +1069,6 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/setInitialDeltaT.H \
 readDynMeshDict.H \
 initialMeshRefinement.H \
 correctPhi.H \
-$(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/continuityErrs.H \
 $(WM_PROJECT_DIR)/src/dynamicFvMesh/lnInclude/meshCourantNo.H \
 $(WM_PROJECT_DIR)/src/dynamicFvMesh/lnInclude/readDyMControls.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/readTimeControls.H \

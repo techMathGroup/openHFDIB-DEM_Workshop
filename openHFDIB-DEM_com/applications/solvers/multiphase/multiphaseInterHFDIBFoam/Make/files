@@ -1,3 +1,0 @@
-multiphaseInterHFDIBFoam.C
-
-EXE = $(FOAM_APPBIN)/multiphaseInterHFDIBFoam
