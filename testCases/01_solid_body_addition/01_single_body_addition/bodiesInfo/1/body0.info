@@ -1,0 +1,37 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2412                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    arch        "LSB;label=32;scalar=64";
+    class       dictionary;
+    location    "/home/isozm/Documents/10_IT_CAS/2026_OFW/30_github/openHFDIB-DEM_Workshop/testCases/01_solid_body_addition/01_single_body_addition/bodiesInfo/1";
+    object      body0.info;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+bodyId          0;
+
+bodyName        sphere;
+
+Vel             ( 0 0 0 );
+
+omega           0;
+
+Axis            ( 0.57735027 0.57735027 0.57735027 );
+
+static          1;
+
+timeStepsInContWStatic 0;
+
+sphere
+{
+    position        ( 0 0 0 );
+    radius          0.01;
+}

@@ -9,50 +9,49 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       dictionary;
-    location    "system";
-    object      controlDict;
+    class       volScalarField;
+    location    "0";
+    object      p;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
+dimensions      [0 2 -2 0 0 0 0];
 
-application     HFDIBDEMFoam;
+internalField   uniform 0;
 
-startFrom       latestTime;
+boundaryField
+{
+    x0
+    {
+        type            fixedValue;
+        value           uniform 0;
+    }
+    x1
+    {
+        type            zeroGradient;
+    }
 
-startTime       0;
+    z0
+    {
+        type            zeroGradient;
+    }
 
-// stopAt          writeNow;
-stopAt          endTime;
+    z1
+    {
+        type            zeroGradient;
+    }
 
-endTime         1;
+    y1
+    {
+        type            fixedValue;
+        value           uniform 0;
+    }
 
-deltaT          0.1;
+    y0
+    {
+        type            zeroGradient;
+    }
+}
 
-writeControl    adjustableRunTime;
-
-writeInterval   1;
-
-purgeWrite      0;
-
-writeFormat     ascii;
-
-writePrecision  8;
-
-writeCompression uncompressed;
-
-timeFormat      general;
-
-timePrecision   8;
-
-maxCo           1.0;
-
-maxDeltaT       0.1;
-
-adjustTimeStep  no;
-
-runTimeModifiable yes;
-
-writeCompression off;
 
 // ************************************************************************* //

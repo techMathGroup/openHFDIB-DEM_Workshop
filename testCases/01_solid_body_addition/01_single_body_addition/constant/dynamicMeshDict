@@ -15,8 +15,8 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
- //dynamicFvMesh   dynamicRefineFvMesh;
- dynamicFvMesh   staticFvMesh;
+dynamicFvMesh   staticFvMesh;
+// dynamicFvMesh   dynamicRefineFvMesh;
 
 dynamicRefineFvMeshCoeffs
 {
@@ -37,7 +37,7 @@ dynamicRefineFvMeshCoeffs
     nBufferLayers   1;
 
     // Refine cells only up to maxRefinement levels
-    maxRefinement   1;
+    maxRefinement   2;
 
     // Stop refinement if maxCells reached
     maxCells        10000000;

@@ -1,0 +1,186 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2412                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _b8cf4d35-20260127 OPENFOAM=2412 patch=260127 version=2412
+Arch   : "LSB;label=32;scalar=64"
+Exec   : HFDIBDEMFoam
+Date   : Jun 24 2026
+Time   : 07:52:48
+Host   : thinkpad
+PID    : 342402
+I/O    : uncollated
+Case   : /home/isozm/Documents/10_IT_CAS/2026_OFW/30_github/openHFDIB-DEM_Workshop/testCases/01_solid_body_addition/01_single_body_addition
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Selecting dynamicFvMesh staticFvMesh
+
+PIMPLE: no residual control data found. Calculations will employ 5 corrector loops
+
+Reading field U
+
+Reading field lambda
+
+Creating field refineF
+
+Reading/calculating face flux field phi
+
+No finite volume options present
+No MRF models present
+
+Courant Number mean: 0 max: 0
+Just to confirm, working with staticFvMesh
+
+Initializing HFDIBDEM
+
+Rotation Model not recognized, setting to default mindlin1953
+ -- Coefficient for characteristic Lenght Lc is set to : 4
+ -- VirtMesh Decomposition Level is set to        : 1
+ -- VirtMesh charCellSize for boundary is set to  : 1
+Creating immersed body based on: sphere
+Updating the mesh: initial refinment
+
+Starting time loop
+
+Courant Number mean: 0 max: 0
+Time = 0.1
+
+updating HFDIBDEM
+New bodyID: 0 name: sphere rhoS: rho [1 -3 0 0 0 0 0] 1 dC: 0.02
+ DEM - CFD Time: 0.1
+updated HFDIBDEM
+ExecutionTime = 0.03 s  ClockTime = 0 s
+
+createBodiesTime    = 0.000343551 s 
+Courant Number mean: 0 max: 0
+Time = 0.2
+
+-- body 0 CoM :(0 0 0)
+-- body 0  linear velocity:(0 0 0) magnitude: 0
+-- body 0 angular velocity:0 magnitude: 0
+-- body 0    rotation axis:(0.57735027 0.57735027 0.57735027) magnitude: 1
+updating HFDIBDEM
+ DEM - CFD Time: 0.2
+updated HFDIBDEM
+ExecutionTime = 0.03 s  ClockTime = 0 s
+
+createBodiesTime    = 0.000898401 s 
+Courant Number mean: 0 max: 0
+Time = 0.3
+
+-- body 0 CoM :(0 0 0)
+-- body 0  linear velocity:(0 0 0) magnitude: 0
+-- body 0 angular velocity:0 magnitude: 0
+-- body 0    rotation axis:(0.57735027 0.57735027 0.57735027) magnitude: 1
+updating HFDIBDEM
+ DEM - CFD Time: 0.3
+updated HFDIBDEM
+ExecutionTime = 0.03 s  ClockTime = 0 s
+
+createBodiesTime    = 0.001333885 s 
+Courant Number mean: 0 max: 0
+Time = 0.4
+
+-- body 0 CoM :(0 0 0)
+-- body 0  linear velocity:(0 0 0) magnitude: 0
+-- body 0 angular velocity:0 magnitude: 0
+-- body 0    rotation axis:(0.57735027 0.57735027 0.57735027) magnitude: 1
+updating HFDIBDEM
+ DEM - CFD Time: 0.4
+updated HFDIBDEM
+ExecutionTime = 0.03 s  ClockTime = 0 s
+
+createBodiesTime    = 0.001772456 s 
+Courant Number mean: 0 max: 0
+Time = 0.5
+
+-- body 0 CoM :(0 0 0)
+-- body 0  linear velocity:(0 0 0) magnitude: 0
+-- body 0 angular velocity:0 magnitude: 0
+-- body 0    rotation axis:(0.57735027 0.57735027 0.57735027) magnitude: 1
+updating HFDIBDEM
+ DEM - CFD Time: 0.5
+updated HFDIBDEM
+ExecutionTime = 0.04 s  ClockTime = 0 s
+
+createBodiesTime    = 0.00218107 s 
+Courant Number mean: 0 max: 0
+Time = 0.6
+
+-- body 0 CoM :(0 0 0)
+-- body 0  linear velocity:(0 0 0) magnitude: 0
+-- body 0 angular velocity:0 magnitude: 0
+-- body 0    rotation axis:(0.57735027 0.57735027 0.57735027) magnitude: 1
+updating HFDIBDEM
+ DEM - CFD Time: 0.6
+updated HFDIBDEM
+ExecutionTime = 0.04 s  ClockTime = 0 s
+
+createBodiesTime    = 0.002597348 s 
+Courant Number mean: 0 max: 0
+Time = 0.7
+
+-- body 0 CoM :(0 0 0)
+-- body 0  linear velocity:(0 0 0) magnitude: 0
+-- body 0 angular velocity:0 magnitude: 0
+-- body 0    rotation axis:(0.57735027 0.57735027 0.57735027) magnitude: 1
+updating HFDIBDEM
+ DEM - CFD Time: 0.7
+updated HFDIBDEM
+ExecutionTime = 0.04 s  ClockTime = 0 s
+
+createBodiesTime    = 0.00300515 s 
+Courant Number mean: 0 max: 0
+Time = 0.8
+
+-- body 0 CoM :(0 0 0)
+-- body 0  linear velocity:(0 0 0) magnitude: 0
+-- body 0 angular velocity:0 magnitude: 0
+-- body 0    rotation axis:(0.57735027 0.57735027 0.57735027) magnitude: 1
+updating HFDIBDEM
+ DEM - CFD Time: 0.8
+updated HFDIBDEM
+ExecutionTime = 0.04 s  ClockTime = 0 s
+
+createBodiesTime    = 0.003408494 s 
+Courant Number mean: 0 max: 0
+Time = 0.9
+
+-- body 0 CoM :(0 0 0)
+-- body 0  linear velocity:(0 0 0) magnitude: 0
+-- body 0 angular velocity:0 magnitude: 0
+-- body 0    rotation axis:(0.57735027 0.57735027 0.57735027) magnitude: 1
+updating HFDIBDEM
+ DEM - CFD Time: 0.9
+updated HFDIBDEM
+ExecutionTime = 0.04 s  ClockTime = 0 s
+
+createBodiesTime    = 0.003836233 s 
+Courant Number mean: 0 max: 0
+Time = 1
+
+-- body 0 CoM :(0 0 0)
+-- body 0  linear velocity:(0 0 0) magnitude: 0
+-- body 0 angular velocity:0 magnitude: 0
+-- body 0    rotation axis:(0.57735027 0.57735027 0.57735027) magnitude: 1
+updating HFDIBDEM
+ DEM - CFD Time: 1
+updated HFDIBDEM
+Active IB listZize      : 1
+bodiesPerProc : 1
+ExecutionTime = 0.04 s  ClockTime = 0 s
+
+createBodiesTime    = 0.004244906 s 
+End
+
