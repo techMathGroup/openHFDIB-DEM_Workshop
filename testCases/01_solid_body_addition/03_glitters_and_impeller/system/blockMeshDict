@@ -16,14 +16,14 @@ FoamFile
 
 scale 0.01;
 
-cubeXYMin -2;
-cubeXYMax 2;
+cubeXYMin -3;
+cubeXYMax 3;
 
-cubeZMin -2;
-cubeZMax 2;
+cubeZMin -1;
+cubeZMax 1;
 
-XYresolution 20;
-Zresolution  20;
+XYresolution 60;
+Zresolution 20;
 
 vertices
 (
