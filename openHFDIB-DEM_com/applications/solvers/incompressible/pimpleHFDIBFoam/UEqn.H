@@ -23,3 +23,6 @@ if (pimple.momentumPredictor())
 
     fvOptions.correct(U);
 }
+
+// Asign the current f as RHS for momentum equation
+UEqn -= f;

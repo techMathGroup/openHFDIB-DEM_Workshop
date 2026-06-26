@@ -19,8 +19,8 @@ scale 0.01;
 cubeXYMin -3;
 cubeXYMax 3;
 
-cubeZMin -0.05;
-cubeZMax 0.05;
+cubeZMin -0.25;
+cubeZMax 0.25;
 
 XYresolution 60;
 Zresolution 1;

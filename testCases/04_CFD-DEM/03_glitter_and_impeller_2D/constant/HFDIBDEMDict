@@ -14,6 +14,7 @@ FoamFile
     object      HFDIBDict;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+//~ bodyNames ("impeller_scaled" "glitter_SC_TR3");// "glitter_SC_TR2" "glitter_SC_TR3" "glitter_SC_TR4" "glitter_SC_TR6" "glitter_SC_TR7");
 bodyNames ("impeller_scaled" "glitter_SC_TR1" "glitter_SC_TR2" "glitter_SC_TR3" "glitter_SC_TR4" "glitter_SC_TR6" "glitter_SC_TR7");
 
 interpolationSchemes
@@ -33,7 +34,7 @@ outputSetup
 {
     basic true;
     iB  false;
-    DEM false;
+    DEM true;
     addModel false;
     parallelDEM false;
 }
@@ -47,19 +48,19 @@ DEM
         particle
         {
             Y       5e7;
-            nu      0;
+            nu      0.3;
             mu      0.1;
             adhN    0;
-            eps     1;
+            eps     0.95;
         }
 
         wall
         {
-            Y       1e7;
-            nu      0;
+            Y       5e7;
+            nu      0.3;
             mu      0.1;
             adhN    0;
-            eps     0.5;
+            eps     0.95;
         }
     }
 
@@ -135,7 +136,8 @@ impeller_scaled
         BC  noSlip;
     }
 
-    sdBasedLambda false;
+    //~ sdBasedLambda false;
+    sdBasedLambda true;
     interfaceSpan 1.0;
     startSynced false;
     refineBuffers -1;
@@ -152,11 +154,11 @@ impeller_scaled
 {
     fullyCoupledBody
     {
-        velocity (0 0.1 0);
+        velocity (0 0.05 0);
     }
 
 
-    rho         rho [1 -3 0 0 0 0 0] 2500;
+    rho         rho [1 -3 0 0 0 0 0] 1000;
     material particle;
     
     bodyGeom convex;
@@ -169,7 +171,8 @@ impeller_scaled
     updateTorque true;
     // updateTorque false;
 
-    sdBasedLambda false;
+    //~ sdBasedLambda false;
+    sdBasedLambda true;
     interfaceSpan 1.0;
     startSynced false;
     refineBuffers -1;
@@ -187,11 +190,11 @@ impeller_scaled
 {
     fullyCoupledBody
     {
-        velocity (0 0.1 0);
+        velocity (0 0.05 0);
     }
 
 
-    rho         rho [1 -3 0 0 0 0 0] 2500;
+    rho         rho [1 -3 0 0 0 0 0] 1000;
     material particle;
     
     bodyGeom convex;
@@ -204,7 +207,8 @@ impeller_scaled
     updateTorque true;
     // updateTorque false;
 
-    sdBasedLambda false;
+    //~ sdBasedLambda false;
+    sdBasedLambda true;
     interfaceSpan 1.0;
     startSynced false;
     refineBuffers -1;
@@ -222,11 +226,11 @@ impeller_scaled
 {
     fullyCoupledBody
     {
-        velocity (0 0.1 0);
+        velocity (0 0.05 0);
     }
 
 
-    rho         rho [1 -3 0 0 0 0 0] 2500;
+    rho         rho [1 -3 0 0 0 0 0] 1000;
     material particle;
     
     bodyGeom convex;
@@ -239,7 +243,8 @@ impeller_scaled
     updateTorque true;
     // updateTorque false;
 
-    sdBasedLambda false;
+    //~ sdBasedLambda false;
+    sdBasedLambda true;
     interfaceSpan 1.0;
     startSynced false;
     refineBuffers -1;
@@ -257,11 +262,11 @@ impeller_scaled
 {
     fullyCoupledBody
     {
-        velocity (0 0.1 0);
+        velocity (0 0.05 0);
     }
 
 
-    rho         rho [1 -3 0 0 0 0 0] 2500;
+    rho         rho [1 -3 0 0 0 0 0] 1000;
     material particle;
     
     bodyGeom convex;
@@ -274,7 +279,8 @@ impeller_scaled
     updateTorque true;
     // updateTorque false;
 
-    sdBasedLambda false;
+    //~ sdBasedLambda false;
+    sdBasedLambda true;
     interfaceSpan 1.0;
     startSynced false;
     refineBuffers -1;
@@ -292,11 +298,11 @@ impeller_scaled
 {
     fullyCoupledBody
     {
-        velocity (0 0.1 0);
+        velocity (0 0.05 0);
     }
 
 
-    rho         rho [1 -3 0 0 0 0 0] 2500;
+    rho         rho [1 -3 0 0 0 0 0] 1000;
     material particle;
     
     bodyGeom convex;
@@ -309,7 +315,8 @@ impeller_scaled
     updateTorque true;
     // updateTorque false;
 
-    sdBasedLambda false;
+    //~ sdBasedLambda false;
+    sdBasedLambda true;
     interfaceSpan 1.0;
     startSynced false;
     refineBuffers -1;
@@ -327,11 +334,11 @@ impeller_scaled
 {
     fullyCoupledBody
     {
-        velocity (0 0.1 0);
+        velocity (0 0.05 0);
     }
 
 
-    rho         rho [1 -3 0 0 0 0 0] 2500;
+    rho         rho [1 -3 0 0 0 0 0] 1000;
     material particle;
     
     bodyGeom convex;
@@ -344,7 +351,8 @@ impeller_scaled
     updateTorque true;
     // updateTorque false;
 
-    sdBasedLambda false;
+    //~ sdBasedLambda false;
+    sdBasedLambda true;
     interfaceSpan 1.0;
     startSynced false;
     refineBuffers -1;
@@ -362,11 +370,11 @@ impeller_scaled
 {
     fullyCoupledBody
     {
-        velocity (0 0.1 0);
+        velocity (0 0.05 0);
     }
 
 
-    rho         rho [1 -3 0 0 0 0 0] 2500;
+    rho         rho [1 -3 0 0 0 0 0] 1000;
     material particle;
     
     bodyGeom convex;
@@ -379,7 +387,8 @@ impeller_scaled
     updateTorque true;
     // updateTorque false;
 
-    sdBasedLambda false;
+    //~ sdBasedLambda false;
+    sdBasedLambda true;
     interfaceSpan 1.0;
     startSynced false;
     refineBuffers -1;
