@@ -1,0 +1,109 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2412                                 |
+|   \\  /    A nd           | Web:      www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+scale 0.01;
+
+cubeXYMin -3;
+cubeXYMax 3;
+
+cubeZMin -1;
+cubeZMax 1;
+
+XYresolution 60;
+Zresolution 20;
+
+vertices
+(
+  ($cubeXYMin       $cubeXYMin      $cubeZMin)
+  ($cubeXYMax       $cubeXYMin      $cubeZMin)
+  ($cubeXYMax       $cubeXYMax      $cubeZMin)
+  ($cubeXYMin       $cubeXYMax      $cubeZMin)
+  ($cubeXYMin       $cubeXYMin      $cubeZMax)
+  ($cubeXYMax       $cubeXYMin      $cubeZMax)
+  ($cubeXYMax       $cubeXYMax      $cubeZMax)
+  ($cubeXYMin       $cubeXYMax      $cubeZMax)
+);
+
+blocks
+(
+  hex (0 1 2 3 4 5 6 7) ($XYresolution $XYresolution $Zresolution) simpleGrading (1 1 1)
+);
+
+edges
+(
+);
+
+boundary
+(
+  z1
+{
+  type symmetryPlane;
+  faces
+  (
+   (4 5 6 7)
+  );
+}
+
+z0
+{
+  type symmetryPlane;
+  faces
+  (
+   (0 3 2 1)
+  );
+}
+
+x1
+{
+type wall;
+  faces
+  (
+  (2 6 5 1)
+ );
+}
+
+x0
+{
+type wall;
+  faces
+  (
+  (0 4 7 3)
+  );
+}
+
+y0
+{
+  type wall;
+  faces
+  (
+  (0 1 5 4)
+  );
+}
+y1
+{
+  type patch;
+  faces
+  (
+  (3 7 6 2)
+  );
+}
+);
+
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //
