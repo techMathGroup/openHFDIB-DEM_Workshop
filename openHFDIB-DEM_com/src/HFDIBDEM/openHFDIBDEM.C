@@ -564,6 +564,22 @@ void openHFDIBDEM::postUpdateBodies
     }
 }
 //---------------------------------------------------------------------------//
+void openHFDIBDEM::postUpdateBodies
+(
+    volScalarField& body,
+    volVectorField& f
+)
+{
+    forAll (immersedBodies_,bodyId)
+    {
+        if (immersedBodies_[bodyId].getIsActive())
+        {
+            immersedBodies_[bodyId].clearIntpInfo();
+            immersedBodies_[bodyId].postPimpleUpdateImmersedBody(body,f);
+        }
+    }
+}
+//---------------------------------------------------------------------------//
 void openHFDIBDEM::recreateBodies
 (
     volScalarField& body,
@@ -1282,6 +1298,21 @@ void openHFDIBDEM::updateFSCoupling
         if (immersedBodies_[bodyId].getIsActive())
         {
             immersedBodies_[bodyId].pimpleUpdate(body,fPress,fVisc);
+        }
+    }
+}
+//---------------------------------------------------------------------------//
+void openHFDIBDEM::updateFSCoupling
+(
+    volScalarField& body,
+    volVectorField& f
+)
+{
+    forAll (immersedBodies_,bodyId)
+    {
+        if (immersedBodies_[bodyId].getIsActive())
+        {
+            immersedBodies_[bodyId].pimpleUpdate(body,f);
         }
     }
 }
