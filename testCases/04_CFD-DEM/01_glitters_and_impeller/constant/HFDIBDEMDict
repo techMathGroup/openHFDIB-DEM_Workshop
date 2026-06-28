@@ -92,20 +92,6 @@ DEM
 			nVec (-1 0.0 0.0);
 			planePoint (-0.03 0 0);
 		}
-
-		// front
-		// {
-		// 	material wall;
-		// 	nVec (0.0 0.0 1);
-		// 	planePoint (0 0 0.01);
-		// }
-
-		// back
-		// {
-		// 	material wall;
-        //     nVec (0.0 0.0 -1);
-        //     planePoint (0 0 -0.01);
-		// }
     }
 }
 
@@ -152,7 +138,7 @@ glitter
 {
     fullyCoupledBody
     {
-        velocity (0 0.1 0);
+        velocity (0 0.05 0);
     }
 
 
@@ -189,7 +175,7 @@ glitter
  			boundBoxCoeffs
  			{
  				minBound (-0.03 -0.03 -0.01);
- 				maxBound (0.03 -0.02 0.01);
+ 				maxBound (0.03 0.03 0.01);
  			}
             scalingMode    noScaling;
  			noScalingCoeffs{}

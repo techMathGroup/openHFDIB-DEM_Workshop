@@ -16,7 +16,7 @@ FoamFile
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 
-application     pimpleHFDIBFoam;;
+application     pimpleHFDIBFoam;
 
 startFrom       latestTime;
 
@@ -26,7 +26,7 @@ stopAt          endTime;
 
 endTime         0.5;
 
-deltaT          1e-4;
+deltaT          0.00025;
 
 writeControl    adjustableRunTime;
 
@@ -44,11 +44,11 @@ timeFormat      general;
 
 timePrecision   8;
 
-maxCo           0.7;
+maxCo           1.0;
 
 maxDeltaT       0.1;
 
-adjustTimeStep  yes;
+adjustTimeStep  no;
 
 runTimeModifiable yes;
 
